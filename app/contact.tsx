@@ -65,6 +65,11 @@ const ServicesSection: React.FC = () => {
             </div>
 
             {/* Shimmer Button (Matched to Theme) */}
+            <a href="https://discord.com/users/1373184488988872706" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-[#5865F2] transition-colors"
+                  aria-label="Join my Discord">
             <button className="group w-fit relative px-8 py-4 bg-white text-black rounded-full font-semibold text-sm tracking-wide overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]">
                 <div className="absolute inset-0 w-full h-full bg-linear-to-r from-transparent via-gray-200 to-transparent -translate-x-full group-hover:animate-shimmer" />
                 <span className="relative flex items-center gap-3">
@@ -72,7 +77,7 @@ const ServicesSection: React.FC = () => {
                     <ArrowRightIcon className="group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
             </button>
-
+              </a>
           </div>
 
           {/* --- Right Image Section --- */}

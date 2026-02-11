@@ -56,12 +56,19 @@ const PortfolioHero = () => {
                   aria-label="Join my Discord"
                 ><SocialButton icon={<DiscordIcon />} /></a>
               </div>
-
+              
+              <a href="https://discord.com/users/1373184488988872706" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-[#5865F2] transition-colors"
+                  aria-label="Join my Discord">
               <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black hover:bg-gray-200 transition-all duration-300 font-semibold text-sm tracking-tight shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]">
                 <span>Let's Talk</span>
                 <ArrowUpRightIcon />
               </button>
+              </a>
             </div>
+
           </div>
 
           {/* Main Hero Text */}

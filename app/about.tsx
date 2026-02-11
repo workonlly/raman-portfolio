@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link';
 const AboutFeature: React.FC = () => {
   return (
     <div className="bg-black min-h-[600px] flex items-center justify-center p-4 md:p-8 font-sans relative overflow-hidden">
@@ -63,13 +63,16 @@ const AboutFeature: React.FC = () => {
             </div>
 
             {/* Button */}
+            <Link href="/longform">
             <button className="group relative px-8 py-4 bg-white text-black rounded-full font-semibold text-sm tracking-wide overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]">
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-gray-200 to-transparent translate-x-[-100%] group-hover:animate-shimmer" />
+              
               <span className="relative flex items-center gap-3">
                 Browse My Work
                 <ArrowRightIcon className="group-hover:translate-x-1 transition-transform duration-200" />
               </span>
             </button>
+             </Link>
 
           </div>
         </div>
