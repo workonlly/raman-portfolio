@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const LongFormShowcase: React.FC = () => {
   return (
@@ -46,10 +47,12 @@ const LongFormShowcase: React.FC = () => {
         <div className="pt-2">
             <button className="group relative px-8 py-3 rounded-full bg-white/5 border border-white/10 overflow-hidden transition-all hover:bg-white/10 hover:border-white/20 hover:scale-105 active:scale-95">
                 <div className="absolute inset-0 w-full h-full bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer" />
+                <Link href="/">
                 <div className="flex items-center gap-2 text-sm font-medium text-white">
                     <span>Go Back</span>
                     <ArrowUpRightIcon className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
+                </Link>
             </button>
         </div>
       </div>
@@ -68,26 +71,26 @@ const LongFormShowcase: React.FC = () => {
         {/* Video Card 2 */}
         <VideoCard 
           image="/screenshots/long-2.jpeg" 
-          duration="08:20"
+          duration="07:20"
           title="Talking Head & VSL"
           link="https://drive.google.com/file/d/1zr2Rypk6FaFYNdrofuF8CwW-P87jHNPD/view?usp=sharing"
         />
         <VideoCard 
           image="/screenshots/long-3.jpeg" 
-          duration="08:20"
-          title="Talking Head & VSL"
+          duration="10:10"
+          title=" Offical marketing"
           link="https://drive.google.com/file/d/1C33KZ6uU6_OXIPbeSDz3ZDKszrO7pZlC/view?usp=sharing"
         />
         <VideoCard 
           image="/screenshots/long-4.jpeg" 
-          duration="08:20"
-          title="Talking Head & VSL"
+          duration="11:40"
+          title="Idea"
           link="https://drive.google.com/file/d/1Hvn4WMcqTMqj9LTIzKCsd-2EP9QyssGp/view?usp=sharing"
         />
         <VideoCard 
           image="/screenshots/long-5.jpeg" 
-          duration="08:20"
-          title="Talking Head & VSL"
+          duration="8:10"
+          title="Farlight 84"
           link="https://drive.google.com/file/d/1iMJliqsx1aDM3JHwHlOHVMkuyPas1qbl/view?usp=sharing"
         />
 

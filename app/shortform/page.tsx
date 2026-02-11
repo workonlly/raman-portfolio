@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const ShortFormShowcase: React.FC = () => {
   return (
@@ -26,23 +27,51 @@ const ShortFormShowcase: React.FC = () => {
         <div className="pt-2">
           <button className="group relative px-8 py-3 rounded-full bg-white/5 border border-white/10 overflow-hidden transition-all hover:bg-white/10 hover:border-white/20 hover:scale-105 active:scale-95">
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:animate-shimmer" />
-              <div className="flex items-center gap-2 text-sm font-medium text-white">
-                  <span>Go Back</span>
-                  <ArrowUpRightIcon className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </div>
+              <Link href="/">
+                <div className="flex items-center gap-2 text-sm font-medium text-white">
+                    <span>Go Back</span>
+                    <ArrowUpRightIcon className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </div>
+                </Link>
           </button>
         </div>
       </div>
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-24 max-w-6xl w-full px-2 md:px-0">
         <VideoCard 
-          image="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&q=80&w=1000"
+          image="shorts/shorts-1.jpeg"
           duration="00:45"
           title="Reel Edit"
+          link="https://drive.google.com/file/d/1aw0WSYDUlXpW5HuR77-XSvBCKL8RfsCj/view?usp=sharing"
         />
         <VideoCard 
-          image="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&q=80&w=1000"
-          duration="01:05"
-          title="TikTok Loop"
+          image="shorts/shorts-2.jpeg"
+          duration="00:46"
+          title="Reel Edit"
+          link="https://drive.google.com/file/d/1Gbzrvr2HXZmI3PsfhFwVe8t7Yg1zGFiY/view?usp=sharing"
+        />
+        <VideoCard 
+          image="shorts/shorts-3.jpeg"
+          duration="00:50"
+          title="Reel Edit"
+          link="https://drive.google.com/file/d/1-6Mg5YlzDjsDrPis7DoWpwtyh9sje5rn/view?usp=sharing"
+        />
+        <VideoCard 
+          image="shorts/shorts-4.jpeg"
+          duration="00:43"
+          title="Reel Edit"
+          link="https://drive.google.com/file/d/16IMhM8_34bFrZBpS622R-OtLyOO2UBEy/view?usp=sharing"
+        />
+        <VideoCard 
+          image="shorts/shorts-5.jpeg"
+          duration="00:46"
+          title="Reel Edit"
+          link="https://drive.google.com/file/d/1yfesK4leQ0NjSpDp_R_a90aU1m5eD5sV/view?usp=sharing"
+        />
+        <VideoCard 
+          image="shorts/shorts-6.jpeg"
+          duration="00:49"
+          title="Reel Edit"
+          link="https://drive.google.com/file/d/10i--f376xtqVi7QnvTd8O70p4L8SvAks/view?usp=sharing"
         />
       </div>
     </div>
@@ -59,10 +88,12 @@ interface VideoCardProps {
   image: string;
   duration?: string;
   title?: string;
+  link?: string;
 }
 
-const VideoCard: React.FC<VideoCardProps> = ({ image, duration, title }) => (
+const VideoCard: React.FC<VideoCardProps> = ({ image, duration, title ,link}) => (
   <div className="group relative aspect-video rounded-[32px] overflow-hidden bg-[#0a0a0a] cursor-pointer shadow-2xl shadow-black/50 ring-1 ring-white/5 hover:ring-white/20 transition-all duration-500 hover:shadow-pink-900/20">
+    <a href={link}>
     <img 
       src={image} 
       alt="Video Thumbnail" 
@@ -85,6 +116,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ image, duration, title }) => (
         </div>
       )}
     </div>
+    </a>
   </div>
 );
     {/* Custom Keyframe Animations */}

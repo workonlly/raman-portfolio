@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link';
 const SaaSShowcase: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center pt-24 pb-20 px-4 font-sans selection:bg-white/20">
@@ -26,24 +26,41 @@ const SaaSShowcase: React.FC = () => {
         <div className="pt-2">
           <button className="group relative px-8 py-3 rounded-full bg-white/5 border border-white/10 overflow-hidden transition-all hover:bg-white/10 hover:border-white/20 hover:scale-105 active:scale-95">
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:animate-shimmer" />
-              <div className="flex items-center gap-2 text-sm font-medium text-white">
-                  <span>Go Back</span>
-                  <ArrowUpRightIcon className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </div>
+              <Link href="/">
+                <div className="flex items-center gap-2 text-sm font-medium text-white">
+                    <span>Go Back</span>
+                    <ArrowUpRightIcon className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </div>
+                </Link>
           </button>
         </div>
       </div>
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-24 max-w-6xl w-full px-2 md:px-0">
         <VideoCard 
-          image="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1000"
+          image="/saas/saas-1.jpeg"
           duration="03:15"
           title="Product Walkthrough"
+          link="https://drive.google.com/file/d/10wj32Yf4AijOh5OjypFkBirHF_HAweik/view?usp=sharing"
         />
         <VideoCard 
-          image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&q=80&w=1000"
-          duration="02:50"
-          title="Explainer Demo"
+          image="/saas/saas-2.jpeg"
+          duration="03:15"
+          title="Product Walkthrough"
+          link="https://drive.google.com/file/d/17Ach-4iYd6u42sXAvP3o-31TpEJAkfi_/view?usp=sharing"
         />
+        <VideoCard 
+          image="/saas/saas-3.jpeg"
+          duration="03:15"
+          title="Product Walkthrough"
+          link="https://drive.google.com/file/d/1mM_vFufw9ALjEsQCPbhVcBlhwmfXw9x4/view?usp=sharing"
+        />
+        <VideoCard 
+          image="/saas/saas-4.jpeg"
+          duration="03:15"
+          title="Product Walkthrough"
+          link="https://drive.google.com/file/d/19VHd4ScoxAquH9cC6T1_VPKsoRo4Lc6j/view?usp=sharing"
+        />
+        
       </div>
     </div>
   );
@@ -59,10 +76,12 @@ interface VideoCardProps {
   image: string;
   duration?: string;
   title?: string;
+  link?: string;
 }
 
-const VideoCard: React.FC<VideoCardProps> = ({ image, duration, title }) => (
+const VideoCard: React.FC<VideoCardProps> = ({ image, duration, title,link }) => (
   <div className="group relative aspect-video rounded-[32px] overflow-hidden bg-[#0a0a0a] cursor-pointer shadow-2xl shadow-black/50 ring-1 ring-white/5 hover:ring-white/20 transition-all duration-500 hover:shadow-cyan-900/20">
+   <a href={link}>
     <img 
       src={image} 
       alt="Video Thumbnail" 
@@ -85,6 +104,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ image, duration, title }) => (
         </div>
       )}
     </div>
+    </a>
   </div>
 );
     {/* Custom Keyframe Animations */}

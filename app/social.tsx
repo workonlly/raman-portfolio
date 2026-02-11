@@ -22,8 +22,15 @@ const ProfileLocation: React.FC = () => {
 
       {/* --- Social Icons Row --- */}
       <div className="flex items-center gap-5">
+        <a 
+          href="https://discord.com/users/1373184488988872706" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-[#5865F2] transition-colors"
+            aria-label="Join my Discord"
+        >
         <SocialIconLink href="#" icon={<DiscordIcon />} />
-  
+        </a>
       </div>
 
     </div>

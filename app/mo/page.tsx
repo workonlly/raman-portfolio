@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const MoGraphShowcase: React.FC = () => {
   return (
@@ -27,24 +28,51 @@ const MoGraphShowcase: React.FC = () => {
         <div className="pt-2">
           <button className="group relative px-8 py-3 rounded-full bg-white/5 border border-white/10 overflow-hidden transition-all hover:bg-white/10 hover:border-white/20 hover:scale-105 active:scale-95">
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:animate-shimmer" />
-              <div className="flex items-center gap-2 text-sm font-medium text-white">
-                  <span>Go Back</span>
-                  <ArrowUpRightIcon className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </div>
+             <Link href="/">
+                <div className="flex items-center gap-2 text-sm font-medium text-white">
+                    <span>Go Back</span>
+                    <ArrowUpRightIcon className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </div>
+                </Link>
           </button>
         </div>
       </div>
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-24 max-w-6xl w-full px-2 md:px-0">
         <VideoCard 
-          image="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&q=80&w=1000"
-          duration="01:30"
+          image="/mo/mo-1.jpeg"
+          duration="02:30"
           title="Logo Animation"
+          link="https://drive.google.com/file/d/1tCBmKgr5PTp6DEA-NDTfGqc47t283aeC/view?usp=sharing"
         />
+       
         <VideoCard 
-          image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1000"
-          duration="02:10"
-          title="Kinetic Typography"
+          image="/mo/mo-2.jpeg"
+          duration="01:50"
+          title="Logo Animation"
+          link="https://drive.google.com/file/d/1Aecb5bxAiFaKVcBv15_6mHzaYxseuppg/view?usp=sharing"
         />
+       
+        <VideoCard 
+          image="/mo/mo-3.jpeg"
+          duration="01:10"
+          title="Logo Animation"
+          link="https://drive.google.com/file/d/1xvqQiT_CeitC_hElWvfFbQ1PF25EXa2p/view?usp=sharing"
+        />
+       
+        <VideoCard 
+          image="/mo/mo-4.jpeg"
+          duration="01:20"
+          title="Logo Animation"
+          link="https://drive.google.com/file/d/1_uTjDDeHfGyjS4E7OeH6MYTe31OxMqgs/view?usp=sharing"
+        />
+       
+        <VideoCard 
+          image="/mo/mo-5.jpeg"
+          duration="02:30"
+          title="Logo Animation"
+          link="https://drive.google.com/file/d/1ylk-LdOb-fQMJu15krIlqvyfeka0Xr-Q/view?usp=sharing"
+        />
+       
       </div>
     </div>
   );
@@ -60,10 +88,12 @@ interface VideoCardProps {
   image: string;
   duration?: string;
   title?: string;
+  link?: string;
 }
 
-const VideoCard: React.FC<VideoCardProps> = ({ image, duration, title }) => (
+const VideoCard: React.FC<VideoCardProps> = ({ image, duration, title,link }) => (
   <div className="group relative aspect-video rounded-[32px] overflow-hidden bg-[#0a0a0a] cursor-pointer shadow-2xl shadow-black/50 ring-1 ring-white/5 hover:ring-white/20 transition-all duration-500 hover:shadow-purple-900/20">
+   <a href={link} target="_blank" rel="noopener noreferrer" className="absolute inset-0">
     <img 
       src={image} 
       alt="Video Thumbnail" 
@@ -84,8 +114,11 @@ const VideoCard: React.FC<VideoCardProps> = ({ image, duration, title }) => (
         <div className="px-3 py-1.5 bg-black/60 backdrop-blur-md rounded-lg border border-white/10 text-xs text-white/90 font-mono tracking-wider">
           {duration}
         </div>
+        
       )}
     </div>
+    </a>
+    
   </div>
 );
     {/* Custom Keyframe Animations */}
