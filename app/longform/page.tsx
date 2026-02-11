@@ -59,16 +59,36 @@ const LongFormShowcase: React.FC = () => {
         
         {/* Video Card 1 */}
         <VideoCard 
-          image="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1000" 
+          image="/screenshots/long-1.jpeg" 
           duration="12:45"
-          title="Podcast & Interview"
+          title="Sales & Service"
+          link="https://drive.google.com/file/d/1vPwvHiwP9sqHuDhvzM8LmG3rcB6MrfYo/view?usp=sharing"
         />
 
         {/* Video Card 2 */}
         <VideoCard 
-          image="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=1000" 
+          image="/screenshots/long-2.jpeg" 
           duration="08:20"
           title="Talking Head & VSL"
+          link="https://drive.google.com/file/d/1zr2Rypk6FaFYNdrofuF8CwW-P87jHNPD/view?usp=sharing"
+        />
+        <VideoCard 
+          image="/screenshots/long-3.jpeg" 
+          duration="08:20"
+          title="Talking Head & VSL"
+          link="https://drive.google.com/file/d/1C33KZ6uU6_OXIPbeSDz3ZDKszrO7pZlC/view?usp=sharing"
+        />
+        <VideoCard 
+          image="/screenshots/long-4.jpeg" 
+          duration="08:20"
+          title="Talking Head & VSL"
+          link="https://drive.google.com/file/d/1Hvn4WMcqTMqj9LTIzKCsd-2EP9QyssGp/view?usp=sharing"
+        />
+        <VideoCard 
+          image="/screenshots/long-5.jpeg" 
+          duration="08:20"
+          title="Talking Head & VSL"
+          link="https://drive.google.com/file/d/1iMJliqsx1aDM3JHwHlOHVMkuyPas1qbl/view?usp=sharing"
         />
 
       </div>
@@ -100,12 +120,13 @@ interface VideoCardProps {
   image: string;
   duration?: string;
   title?: string;
+  link?: string;
 }
 
-const VideoCard: React.FC<VideoCardProps> = ({ image, duration, title }) => {
+const VideoCard: React.FC<VideoCardProps> = ({ image, duration, title,link }) => {
   return (
     <div className="group relative aspect-video rounded-[32px] overflow-hidden bg-[#0a0a0a] cursor-pointer shadow-2xl shadow-black/50 ring-1 ring-white/5 hover:ring-white/20 transition-all duration-500 hover:shadow-purple-900/20">
-      
+      <a href={link} target="_blank" rel="noopener noreferrer" className="absolute inset-0">
       {/* Background Image with Zoom Effect */}
       <img 
         src={image} 
@@ -136,6 +157,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ image, duration, title }) => {
             </div>
         )}
       </div>
+      </a>
     </div>
   );
 };
